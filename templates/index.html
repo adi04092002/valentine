@@ -32,8 +32,17 @@
 
   <!-- Slideshow -->
   <div class="slideshow">
-    <img id="slide" src="/static/images/photo1.jpg">
+    {% for img in images %}
+      <img class="slide" src="{{ img }}">
+    {% endfor %}
   </div>
+
+    <h3>Our Memories 💕</h3>
+    <div class="gallery">
+    {% for img in images %}
+        <img src="{{ img }}">
+    {% endfor %}
+    </div>
 
   <!-- Love Slider -->
   <h3>How much do you love me? 😄</h3>
