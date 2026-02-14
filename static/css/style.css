@@ -108,7 +108,7 @@ body {
   .hidden {
     display: none;
   }
-  
+
 /* Slideshow */
 .slideshow {
     position: relative;
@@ -123,7 +123,7 @@ body {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    animation: slideShow 20s infinite;
+    animation: slideShow 28s infinite;
   }
   
   .slide:nth-child(1) { animation-delay: 0s; }
@@ -131,6 +131,8 @@ body {
   .slide:nth-child(3) { animation-delay: 8s; }
   .slide:nth-child(4) { animation-delay: 12s; }
   .slide:nth-child(5) { animation-delay: 16s; }
+  .slide:nth-child(6) { animation-delay: 20s; }
+  .slide:nth-child(7) { animation-delay: 24s; }
   
   @keyframes slideShow {
     0% { opacity: 0; }
