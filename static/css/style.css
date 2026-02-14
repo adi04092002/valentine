@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .container {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  
+  h1 {
+    color: #ff4d6d;
+  }
+  
+  .subtitle {
+    margin-bottom: 15px;
+  }
+  
+  .slideshow img {
+    width: 100%;
+    border-radius: 15px;
+    margin: 15px 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #yesBtn {
+    background: #ff4d6d;
+    color: white;
+  }
+  
+  #yesBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px pink;
+  }
+  
+  #noBtn {
+    background: #ddd;
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 600px;
+    }
+  }
+  
+  .lock-screen {
+    background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .lock-screen input {
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    margin: 10px;
+    width: 220px;
+    text-align: center;
+  }
+  
+  .lock-screen button {
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .hidden {
+    display: none;
+  }

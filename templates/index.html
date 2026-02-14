@@ -1,69 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Happy Valentine’s Day ❤️</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style.css">
+  <meta charset="UTF-8">
+  <title>For Urvi 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/static/css/style.css">
 </head>
+
 <body>
 
-<audio autoplay loop>
-    <source src="/static/music.mp3" type="audio/mpeg">
-</audio>
-
-<div class="card">
-    <h1>💖 Happy Valentine’s Day 💖</h1>
-    <h2 class="name">{{ name }}</h2>
-
-    <p class="message">
-        Every smile of yours makes my world brighter.  
-        You are my forever ❤️
-    </p>
-
-    <!-- Slideshow -->
-    <div class="slideshow">
-        <img id="slide" src="/static/photo1.jpg">
-    </div>
-
-    <!-- Love Slider -->
-    <h3>How much do you love me? 😄</h3>
-    <input type="range" min="0" max="100" value="50" id="loveSlider">
-    <p id="loveValue">50%</p>
-
-    <!-- Proposal -->
-    <h3>Will you be my Valentine? 💌</h3>
-    <div class="buttons">
-        <button class="yes" onclick="yesClicked()">YES 💕</button>
-        <button class="no" onclick="noClicked()">NO 🙈</button>
-    </div>
-
-    <p id="response"></p>
+<!-- PASSWORD SCREEN -->
+<div id="lockScreen" class="lock-screen">
+  <h1>🔒 A Secret For You</h1>
+  <p>Enter the magic word 💕</p>
+  <input type="password" id="passwordInput" placeholder="Hint: Your future name">
+  <button onclick="unlock()">Unlock 💖</button>
+  <p id="errorMsg"></p>
 </div>
 
-<script src="/static/hearts.js"></script>
-<script src="/static/confetti.js"></script>
-<script src="/static/slideshow.js"></script>
+<!-- MAIN CONTENT -->
+<div id="mainContent" class="container hidden">
 
-<script>
-const slider = document.getElementById("loveSlider");
-const output = document.getElementById("loveValue");
+  <h1>Happy Valentine’s Day, {{ name }} 💖</h1>
+  <p class="subtitle">You make my world brighter 🌸</p>
 
-slider.oninput = function () {
-    output.innerHTML = this.value + "%";
-};
+  <!-- Music -->
+  <audio autoplay loop>
+    <source src="/static/music/love.mp3" type="audio/mp3">
+  </audio>
 
-function yesClicked() {
-    document.getElementById("response").innerHTML =
-        "Yayyy!!! 💖 I love you infinity ♾️❤️";
-    startConfetti();
-}
+  <!-- Slideshow -->
+  <div class="slideshow">
+    <img id="slide" src="/static/images/photo1.jpg">
+  </div>
 
-function noClicked() {
-    document.getElementById("response").innerHTML =
-        "Nice try 😏 You don’t have a choice, you are stuck with me.💕";
-}
-</script>
+  <!-- Love Slider -->
+  <h3>How much do you love me? 😄</h3>
+  <input type="range" id="loveSlider" min="0" max="100" value="50">
+  <p id="loveText">50% 😐</p>
+
+  <!-- Proposal -->
+  <h2>Will you be my Valentine? 💌</h2>
+  <div class="buttons">
+    <button id="yesBtn">YES 💖</button>
+    <button id="noBtn">NO 😜</button>
+  </div>
+
+</div>
+
+<!-- Confetti + Fireworks -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="/static/js/script.js"></script>
 
 </body>
 </html>
