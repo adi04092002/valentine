@@ -6,8 +6,11 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     image_folder = "static/images/photos"
-    images = os.listdir(image_folder)
-    images = [f"/{image_folder}/{img}" for img in images if img.lower().endswith(('.jpg', '.png', '.jpeg'))]
+    images = sorted([
+        f"/{image_folder}/{img}"
+        for img in os.listdir(image_folder)
+        if img.lower().endswith((".jpg", ".jpeg", ".png"))
+    ])
 
     return render_template(
         "index.html",

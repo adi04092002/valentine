@@ -4,28 +4,26 @@
   <meta charset="UTF-8">
   <title>For Urvi 💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 <body>
 
-<!-- PASSWORD SCREEN -->
-<div id="lockScreen" class="lock-screen">
-  <h1>🔒 A Secret For You</h1>
+<!-- Lock Screen -->
+<div id="lockScreen" class="lock">
+  <h1>🔒 A Little Surprise</h1>
   <p>Enter the magic word 💕</p>
-  <input type="password" id="passwordInput" placeholder="Hint: Your future name">
+  <input id="passwordInput" type="password" placeholder="Hint: Your Future Name">
   <button onclick="unlock()">Unlock 💖</button>
   <p id="errorMsg"></p>
 </div>
 
-<!-- MAIN CONTENT -->
-<div id="mainContent" class="container hidden">
+<!-- Main Content -->
+<div id="main" class="card hidden">
 
   <h1>Happy Valentine’s Day, {{ name }} 💖</h1>
-  <p class="subtitle">You make my world brighter 🌸</p>
+  <p class="subtitle">Every moment with you is my favorite 🌸</p>
 
-  <!-- Music -->
   <audio autoplay loop>
     <source src="/static/music/love.mp3" type="audio/mp3">
   </audio>
@@ -33,20 +31,21 @@
   <!-- Slideshow -->
   <div class="slideshow">
     {% for img in images %}
-      <img class="slide" src="{{ img }}">
+      <img src="{{ img }}">
     {% endfor %}
   </div>
 
-    <h3>Our Memories 💕</h3>
-    <div class="gallery">
+  <!-- Gallery -->
+  <h2>Our Memories 💞</h2>
+  <div class="gallery">
     {% for img in images %}
-        <img src="{{ img }}">
+      <img src="{{ img }}">
     {% endfor %}
-    </div>
+  </div>
 
-  <!-- Love Slider -->
+  <!-- Slider -->
   <h3>How much do you love me? 😄</h3>
-  <input type="range" id="loveSlider" min="0" max="100" value="50">
+  <input type="range" min="0" max="100" value="50" id="loveSlider">
   <p id="loveText">50% 😐</p>
 
   <!-- Proposal -->
@@ -58,7 +57,6 @@
 
 </div>
 
-<!-- Confetti + Fireworks -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script src="/static/js/script.js"></script>
 
